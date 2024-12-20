@@ -11,11 +11,11 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
         // password validation: My Task
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
             })
             .catch(error => {
                 console.log(error.message);

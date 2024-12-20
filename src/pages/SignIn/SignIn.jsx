@@ -10,7 +10,7 @@ const SignIn = () => {
     const {signInUser} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location);
+    // console.log(location);
     const from = location.state || '/'
 
     const handleSignIn = e => {
@@ -18,16 +18,16 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
         
         signInUser(email, password)
         .then(result => {
-            console.log(result.user.email);
+            // console.log(result.user.email);
             // navigate(from);
             const user = {email: email}
             axios.post('http://localhost:3000/jwt', user, {withCredentials: true})
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
             })
         })
         .catch(error => {
